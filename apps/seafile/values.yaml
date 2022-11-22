@@ -8,7 +8,7 @@ seafile:
         hajimari.io/appName: Seafile
         hajimari.io/icon: google-drive
       hosts:
-        - host: &host seafile.192-168-39-216.nip.io
+        - host: seafile.local
           paths:
             - path: /
               pathType: Prefix
