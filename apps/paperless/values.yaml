@@ -12,7 +12,7 @@ paperless:
             - path: /
               pathType: Prefix
   env: 
-    PAPERLESS_REDIS: redis://paperless-redis-master/1
+    PAPERLESS_REDIS: redis://paperless-redis-master:6379
   postgresql:
     enabled: true
   redis:
