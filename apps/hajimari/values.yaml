@@ -26,10 +26,8 @@ hajimari:
     groups:
       - name: Homelab
         links:
-          - name: Documentation
-            url: https://homelab.127-0-0-1.nip.io
           - name: Public GitHub repository
-            url: https://github.com/khuedoan/homelab
+            url: https://github.com/KrE80r/homelab
       - name: Managed services
         links:
           - name: Terraform Cloud
