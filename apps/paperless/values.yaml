@@ -14,4 +14,6 @@ paperless:
   postgresql:
     enabled: true
   redis:
-  enabled: true  
+    enabled: true
+    auth:
+      enabled: false
