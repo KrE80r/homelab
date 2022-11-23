@@ -3,24 +3,24 @@ elementweb:
     enabled: true
     className: nginx
     annotations:
-      cert-manager.io/cluster-issuer: letsencrypt-prod
-      external-dns.alpha.kubernetes.io/target: "homelab-tunnel.127-0-0-1.nip.io"
+#      cert-manager.io/cluster-issuer: letsencrypt-prod
+      external-dns.alpha.kubernetes.io/target: "homelab.local"
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
       hajimari.io/appName: Chat
       hajimari.io/icon: chat
     hosts:
-      - host: &frontend_host chat.127-0-0-1.nip.io
+      - host: chat.local
         paths:
           - path: /
             pathType: Prefix
-    tls:
-      - secretName: element-tls-certificate
-        hosts:
-          - *frontend_host
+#    tls:
+#      - secretName: element-tls-certificate
+#        hosts:
+#          - *frontend_host
   config:
     default:
-      base_url: https://matrix.127-0-0-1.nip.io
-      server_name: 127-0-0-1.nip.io
+      base_url: http://matrix.local
+      server_name: matrix.local
 
 dendrite:
   polylith: false
@@ -29,7 +29,7 @@ dendrite:
     pullPolicy: IfNotPresent
   configuration:
     version: 2
-    servername: &backend_host matrix.127-0-0-1.nip.io
+    servername: matrix.local
     database:
       host: matrix-postgresql:5432
       user: dendrite
@@ -71,8 +71,8 @@ dendrite:
     enabled: true
     className: nginx
     annotations:
-      cert-manager.io/cluster-issuer: letsencrypt-prod
-      external-dns.alpha.kubernetes.io/target: "homelab-tunnel.127-0-0-1.nip.io"
+#      cert-manager.io/cluster-issuer: letsencrypt-prod
+      external-dns.alpha.kubernetes.io/target: "homelab.local"
       external-dns.alpha.kubernetes.io/cloudflare-proxied: "true"
       nginx.ingress.kubernetes.io/proxy-body-size: 32m
       hajimari.io/enable: 'false'
@@ -81,7 +81,7 @@ dendrite:
         paths:
           - path: /
             pathType: Prefix
-    tls:
-      - secretName: dendrite-tls-certificate
-        hosts:
-          - *backend_host
+#    tls:
+#      - secretName: dendrite-tls-certificate
+#        hosts:
+#          - *backend_host
