@@ -13,6 +13,8 @@ paperless:
               pathType: Prefix
   env: 
     PAPERLESS_REDIS: redis://paperless-redis-master:6379
+    PAPERLESS_ADMIN_USER: admin
+    PAPERLESS_ADMIN_PASSWORD: admin
   postgresql:
     enabled: true
   redis:
