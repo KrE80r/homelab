@@ -14,13 +14,13 @@ dex:
         config:
           clientID: $GITEA_CLIENT_ID
           clientSecret: $GITEA_CLIENT_SECRET
-          redirectURI: https://dex.127-0-0-1.nip.io/callback
-          baseURL: https://git.127-0-0-1.nip.io
+          redirectURI: http://dex.local/callback
+          baseURL: https://git.local
     staticClients:
       - id: grafana-sso
         name: Grafana
         redirectURIs:
-          - 'https://grafana.127-0-0-1.nip.io/login/generic_oauth'
+          - 'http://grafana.local/login/generic_oauth'
         secretEnv: GRAFANA_SSO_CLIENT_SECRET
   envFrom:
     - secretRef:
@@ -29,14 +29,14 @@ dex:
     enabled: true
     className: nginx
     annotations:
-      cert-manager.io/cluster-issuer: letsencrypt-prod
+#      cert-manager.io/cluster-issuer: letsencrypt-prod
       hajimari.io/enable: 'false'
     hosts:
-      - host: &host dex.127-0-0-1.nip.io
+      - host: dex.local
         paths:
           - path: /
             pathType: ImplementationSpecific
-    tls:
-      - secretName: dex-tls-certificate
-        hosts:
-          - *host
+#    tls:
+#      - secretName: dex-tls-certificate
+#        hosts:
+#          - *host
