@@ -13,3 +13,5 @@ paperless:
               pathType: Prefix
   postgresql:
     enabled: true
+  redis:
+  enabled: true  
