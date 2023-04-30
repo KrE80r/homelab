@@ -16,18 +16,18 @@ repositories:
     owner: ops
     private: false
     migrate:
-      source: https://github.com/khuedoan/homelab
+      source: https://github.com/kre80r/homelab
       mirror: false
     # TODO create webhook (use a global one?)
     # webhooks:
     #   - http://gitea-webhook.tekton-pipelines:3000
   - name: blog
-    owner: khuedoan
+    owner: kre80r
     migrate:
-      source: https://github.com/khuedoan/blog
+      source: https://github.com/kre80r/blog
       mirror: true
   - name: backstage
-    owner: khuedoan
+    owner: kre80r
     migrate:
-      source: https://github.com/khuedoan/backstage
+      source: https://github.com/kre80r/backstage
       mirror: true

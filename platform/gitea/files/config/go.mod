@@ -1,4 +1,4 @@
-module git.127-0-0-1.nip.io/khuedoan/homelab/gitea/config
+module git.127-0-0-1.nip.io/kre80r/homelab/gitea/config
 
 go 1.18
 
